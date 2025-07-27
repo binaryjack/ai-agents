@@ -1,0 +1,66 @@
+{
+  "reactPatterns": {
+    "componentStyle": "functional",
+    "stateManagement": "zustand",
+    "styling": "tailwind",
+    "typescript": true,
+    "testing": "jest-rtl",
+    "routing": "react-router"
+  },
+  "codeStyle": {
+    "indentation": 2,
+    "quotes": "single",
+    "semicolons": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true
+  },
+  "projectStructure": {
+    "componentsDir": "src/components",
+    "pagesDir": "src/pages",
+    "hooksDir": "src/hooks",
+    "utilsDir": "src/utils",
+    "storeDir": "src/store",
+    "stylesDir": "src/styles",
+    "testsDir": "src/__tests__"
+  },
+  "agents": {
+    "architect": {
+      "enabled": true,
+      "priority": 1
+    },
+    "component": {
+      "enabled": true,
+      "priority": 2
+    },
+    "styling": {
+      "enabled": true,
+      "priority": 3
+    },
+    "state": {
+      "enabled": true,
+      "priority": 4
+    },
+    "testing": {
+      "enabled": true,
+      "priority": 5
+    },
+    "performance": {
+      "enabled": true,
+      "priority": 6
+    },
+    "api": {
+      "enabled": true,
+      "priority": 7
+    },
+    "deployment": {
+      "enabled": true,
+      "priority": 8
+    }
+  },
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-4",
+    "temperature": 0.3,
+    "maxTokens": 2000
+  }
+}

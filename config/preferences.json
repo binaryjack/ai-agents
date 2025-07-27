@@ -1,0 +1,87 @@
+{
+  "agents": {
+    "architect": {
+      "enabled": true,
+      "priority": 1,
+      "settings": {
+        "analysisDepth": "thorough",
+        "patternRecognition": true
+      }
+    },
+    "component": {
+      "enabled": true,
+      "priority": 2,
+      "settings": {
+        "componentStyle": "functional",
+        "propsValidation": true,
+        "generateStories": true
+      }
+    },
+    "styling": {
+      "enabled": true,
+      "priority": 3,
+      "settings": {
+        "framework": "tailwindcss",
+        "scssSupport": true,
+        "responsiveDesign": true
+      }
+    },
+    "state": {
+      "enabled": true,
+      "priority": 2,
+      "settings": {
+        "defaultLibrary": "zustand",
+        "typeScriptSupport": true,
+        "persistState": true
+      }
+    },
+    "testing": {
+      "enabled": true,
+      "priority": 4,
+      "settings": {
+        "framework": "vitest",
+        "coverageThreshold": 80,
+        "e2eTests": false
+      }
+    },
+    "performance": {
+      "enabled": true,
+      "priority": 5,
+      "settings": {
+        "bundleAnalysis": true,
+        "lazyLoading": true,
+        "memoization": true
+      }
+    },
+    "api": {
+      "enabled": true,
+      "priority": 3,
+      "settings": {
+        "clientLibrary": "fetch",
+        "errorHandling": "comprehensive",
+        "caching": true
+      }
+    },
+    "deployment": {
+      "enabled": true,
+      "priority": 6,
+      "settings": {
+        "platform": "vercel",
+        "cicd": true,
+        "environmentVariables": true
+      }
+    }
+  },
+  "project": {
+    "name": "react-app",
+    "outputDirectory": "./output",
+    "framework": "react",
+    "typescript": true
+  },
+  "preferences": {
+    "codingStyle": "prototype-based",
+    "testingFramework": "vitest",
+    "stateManagement": "zustand",
+    "styling": "tailwindcss"
+  }
+}
