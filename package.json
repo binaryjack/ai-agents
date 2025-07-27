@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Multi-agent system for React development with specialized AI agents",
   "type": "module",
+  "main": "./dist/react-multi-agent-system.js",
+  "bin": {
+    "react-ai-agents": "./cli.js"
+  },
+  "files": [
+    "dist/",
+    "cli.js",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

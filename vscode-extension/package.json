@@ -1,0 +1,185 @@
+{
+  "name": "react-ai-agents-vscode",
+  "displayName": "React AI Agents",
+  "description": "Multi-agent system for React development integrated into VS Code",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning",
+    "Snippets"
+  ],
+  "keywords": [
+    "react",
+    "ai",
+    "agents",
+    "typescript",
+    "development"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "reactAiAgents.generateComponent",
+        "title": "Generate React Component",
+        "category": "React AI Agents"
+      },
+      {
+        "command": "reactAiAgents.analyzeProject",
+        "title": "Analyze Project Architecture",
+        "category": "React AI Agents"
+      },
+      {
+        "command": "reactAiAgents.optimizePerformance",
+        "title": "Optimize Performance",
+        "category": "React AI Agents"
+      },
+      {
+        "command": "reactAiAgents.generateTests",
+        "title": "Generate Tests",
+        "category": "React AI Agents"
+      },
+      {
+        "command": "reactAiAgents.setupStateManagement",
+        "title": "Setup State Management",
+        "category": "React AI Agents"
+      },
+      {
+        "command": "reactAiAgents.showAgentPanel",
+        "title": "Show Agent Panel",
+        "category": "React AI Agents"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .tsx || resourceExtname == .jsx",
+          "command": "reactAiAgents.generateComponent",
+          "group": "reactai@1"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "resourceExtname == .tsx || resourceExtname == .jsx",
+          "command": "reactAiAgents.generateComponent",
+          "group": "reactai@1"
+        },
+        {
+          "when": "resourceExtname == .tsx || resourceExtname == .jsx",
+          "command": "reactAiAgents.generateTests",
+          "group": "reactai@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "reactAiAgents.generateComponent",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "reactAiAgents.analyzeProject",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "reactAiAgents.optimizePerformance",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "reactAiAgents.generateTests",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "reactAiAgents.setupStateManagement",
+          "when": "workspaceFolderCount > 0"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "reactAiAgents",
+          "name": "React AI Agents",
+          "when": "workspaceFolderCount > 0",
+          "contextualTitle": "React AI Agents"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "reactAiAgents",
+          "title": "React AI Agents",
+          "icon": "$(robot)"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "React AI Agents",
+      "properties": {
+        "reactAiAgents.autoGenerateTests": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically generate tests when creating components"
+        },
+        "reactAiAgents.defaultStyling": {
+          "type": "string",
+          "enum": [
+            "tailwindcss",
+            "styled-components",
+            "css-modules",
+            "scss"
+          ],
+          "default": "tailwindcss",
+          "description": "Default styling approach for generated components"
+        },
+        "reactAiAgents.stateManagement": {
+          "type": "string",
+          "enum": [
+            "zustand",
+            "redux-toolkit",
+            "context-api",
+            "jotai"
+          ],
+          "default": "zustand",
+          "description": "Preferred state management solution"
+        },
+        "reactAiAgents.enableAiSuggestions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AI-powered code suggestions"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "@vscode/test-electron": "^2.3.8",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "react-multi-agent-system": "file:..\\react-multi-agent-system-1.0.0.tgz"
+  }
+}
